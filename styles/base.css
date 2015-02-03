@@ -3,21 +3,19 @@ html, body {
   font-size: 16px;
 }
 
+body {
+  padding-top: 50px;
+}
 
 h1, h2, h3, h4, h5, p, a, div, section {
   font-family: 'Crete Round', serif;
 }
 
-body > div.page-host {
-  padding: 50px;
-}
-
-a.thumbnail > img {
-  width: 260px;
-  height: 180px;
-}
-
 /* Bootstrap overrides */
+
+.container {
+  max-width: 730px;
+}
 
 .form-control {
   border: none;

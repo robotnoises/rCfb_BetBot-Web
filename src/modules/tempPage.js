@@ -1,4 +1,5 @@
 import { TokenRepository } from '../repositories/token';
+import { Redirect } from 'aurelia-router';
 
 export class TempPage {
 
@@ -6,12 +7,11 @@ export class TempPage {
 
   constructor(repo) {
     this.repo = repo;
-    this.tokenValid = false;
   }
 
-  activate(params) {
-    return this.repo.validate(params.token).then(response => {
-      this.tokenValid = response;
+  canActivate(params) {
+    return this.repo.validate(params.token).then(isValid => {
+      if (!isValid) return new Redirect('/error');
     });
   }
 }

@@ -4,7 +4,7 @@ export class App {
 
   static inject() { return [Router]; }
 
-  constructor(router) {
+  constructor(router, redirect) {
     this.router = router;
     this.router.configure(config => {
 
@@ -16,6 +16,12 @@ export class App {
         {
           route: ['t/:token'],
           moduleId: './modules/tempPage',
+          title: 'Confirm your bet',
+          nav: false
+        },
+        {
+          route: ['error'],
+          moduleId: './modules/errors',
           nav: false
         }
       ]);
