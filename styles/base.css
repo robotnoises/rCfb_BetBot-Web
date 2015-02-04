@@ -11,6 +11,23 @@ h1, h2, h3, h4, h5, p, a, div, section {
   font-family: 'Crete Round', serif;
 }
 
+.emphasis {
+  padding: 0px 5px 2px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 1.1em;
+  color: #666;
+}
+
+textarea {
+  resize: none;
+}
+
 /* Bootstrap overrides */
 
 .container {
@@ -34,4 +51,6 @@ h1, h2, h3, h4, h5, p, a, div, section {
 
 input.form-control {
   background: inherit;
+  padding-left: 5px;
+  padding-right: 5px;
 }

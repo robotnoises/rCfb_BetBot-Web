@@ -2,7 +2,7 @@ import { Urls } from '../settings/urls';
 import { Keys } from '../settings/keys';
 import { HttpClient } from 'aurelia-http-client';
 
-export class TokenRepository {
+export class TempPageRepository {
 
   static inject() { return [Urls, Keys, HttpClient]; }
 
@@ -13,11 +13,19 @@ export class TokenRepository {
   }
 
   validate(token) {
-    var url = this.urls.token.validate(token);
+    var url = this.urls.tempPage.validate(token);
     var validKey = this.keys.token.isValid;
 
     return this.http.post(url).then(response => {
       return response.content[validKey];
+    });
+  }
+
+  getBetData(token) {
+    var url = this.urls.tempPage.betData(token);
+    
+    return this.http.get(url).then(response => {
+      return response.content; // a Bet object
     });
   }
 }
