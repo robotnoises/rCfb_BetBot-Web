@@ -3,7 +3,7 @@ var selectionItem = function (name, value) {
 
   si.name = name;
   si.value = value;
-  si.style = 'hidden selectionItem';
+  si.style = 'hidden';
 
   return si;
 };
@@ -40,5 +40,10 @@ export class Typeahead {
     this.challengerLookupValue = 'on';
     this.placeholder = "enter username";
     this.selectionItems = items;
+  }
+
+  updateTypeahead()
+  {
+    this.selectionItems = filter(this.challengerLookupValue);
   }
 }

@@ -2,9 +2,9 @@
 
 <template>
   <div class="typeahead-wrapper">
-    <input type="text" class="form-control" placeholder="${placeholder}" value.bind="challengerLookupValue" />
+    <input type="text" class="form-control" placeholder="${placeholder}" value.bind="challengerLookupValue" onkeypress.trigger="updateTypeahead()" />
     <div class="selectionList">
-      <div repeat.for="item of selectionItems" id.bind="item.value" class.one-way="item.style">${item.name}</div>
+      <div repeat.for="item of selectionItems" id.bind="item.value" class="selectionItem ${item.style}">${item.name}</div>
     </div>
   </div>
 
