@@ -1,13 +1,17 @@
 <template>
+  <import from="../components/typeahead"></import>
+
   <h1 class="text-center">BETTOR'S AGREEMENT</h1>
 
   <section class="form-inline">
-    <p>I, <strong>/u/</strong><span class="emphasis">${ betData.solicitor }</span>, hereby challenge <strong>/u/</strong><input type="text" class="form-control" style="min-width:160px;" type="text" placeholder="enter a username" value.bind="betData.challenger"/> to the following:</p>
+    <p>I, <strong>/u/</strong><span class="emphasis">${betData.solicitor}</span>, hereby challenge <strong>/u/</strong><input type="text" class="form-control" style="min-width:160px;" type="text" placeholder="enter a username" value.bind="betData.challenger"/> to the following:</p>
   </section>
 
   <section>
     <textarea class="form-control" rows="8" placeholder="Enter the terms of the bet..." value.bind="betData.terms"></textarea>
   </section>
 
-  <input type="text" class="typeahead" />
+  <div class="form-inline">
+    <typeahead></typeahead>
+  </div>
 </template>

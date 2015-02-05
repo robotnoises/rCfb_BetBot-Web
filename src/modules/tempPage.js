@@ -8,7 +8,6 @@ export class TempPage {
   constructor(repo) {
     this.repo = repo;
     this.betData = {};
-    this.challengerSuggestions = 'one,two,three,four,five';
   }
 
   canActivate(params) {

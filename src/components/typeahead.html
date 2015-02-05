@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="/styles/typeahead.css" />
+
+<template>
+  <div class="typeahead-wrapper">
+    <input type="text" class="form-control" placeholder="${placeholder}" value.bind="challengerLookupValue" />
+    <div class="selectionList">
+      <div repeat.for="item of selectionItems" id.bind="item.value" class.one-way="item.style">${item.name}</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div style="font-size: 0.8em !important; color: #ccc !important;">
+    <div>Input: ${challengerLookupValue}</div>
+    <div repeat.for="item of selectionItems">
+      <p><strong>name:</strong> ${item.name}</p>
+      <p><strong>class:</strong> ${item.style}</p>
+    </div>
+  </div>
+</template>
