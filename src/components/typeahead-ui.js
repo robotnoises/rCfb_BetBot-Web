@@ -5,66 +5,6 @@ var hoverClass = 'hovered';
 var navigationKeyCodes = [38,40]; // up/down arrow keys, might add tab
 var enterKeyCode = [13];
 
-var getSelectionItems = function (str) {
-  var items = str.split(',');
-  var selectionItems = [];
-  var selectionItem = function (name) {
-    var si = {};
-    si.name = name;
-    si.visibility = 'hidden';
-    return si;
-  };
-
-  for (var i = items.length; i--;) {
-    selectionItems.push(Object.create(selectionItem(items[i])));
-  }
-
-  return selectionItems;
-}
-
-var typeaheadMatcher = function (items) {
-  return function showMatches(q) {
-    var substrRegex = new RegExp(q, 'i');
-
-    for (var i = items.length; i--;) {
-      var name = items[i].name;
-      if (substrRegex.test(name) && name != q && q.length != 0) {
-        items[i].visibility = showClass;
-      } else {
-        items[i].visibility = hideClass;
-      }
-    }
-
-    return items;
-  };
-};
-
-import { Behavior } from 'aurelia-framework';
-
-export class Typeahead {
-
-  static metadata() { return Behavior.withProperty('challengers'); }
-
-  constructor(repo) {
-    this.inputValue = '';
-    this.placeholder = "enter username";
-    this.selectionItems = getSelectionItems('Ravelair,4ChanAnnouncerBot,was_saying_boo_urns,cfb_betbot,gamesthatown,blroemp');
-  }
-
-  update(prop, value) {
-    // Todo: Check if props exist
-    this[prop] = value;
-    this.filter('selectionItems', 'inputValue');
-  };
-
-  filter(itemsToFilter, filterProp) {
-    // Todo: Check if props exist
-    var filterStr = this[filterProp];
-    var filterer = typeaheadMatcher(this.selectionItems);
-    this[itemsToFilter] = filterer(filterStr);
-  };
-}
-
 (function () {
 
   var hasClass = function (element, className) {

@@ -8,6 +8,7 @@ export class TempPage {
   constructor(repo) {
     this.repo = repo;
     this.betData = {};
+    this.challengers = '';
   }
 
   canActivate(params) {
@@ -19,6 +20,7 @@ export class TempPage {
   activate(params) {
     return this.repo.getBetData(params.token).then(data => {
       this.betData = data;
+      this.challengers = data['potential_challengers'];
     });
   }
 }

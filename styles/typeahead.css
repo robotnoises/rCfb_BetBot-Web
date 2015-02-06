@@ -16,7 +16,8 @@
   transition: all 100ms;
 }
 
-  .selectionItem:hover {
+  .selectionItem:hover,
+  .selectionItem.hovered {
     background: rgb(0, 108, 203);
     color: #fff;
   }

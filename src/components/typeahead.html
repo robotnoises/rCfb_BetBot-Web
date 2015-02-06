@@ -1,14 +1,12 @@
 <link rel="stylesheet" type="text/css" href="/styles/typeahead.css" />
 
 <template>
-  <div class="typeahead-wrapper">
-    <input type="text" class="form-control" placeholder="${placeholder}" value.bind="inputValue" keyup.delegate="filter('selectionItems')" />
-    <div class="selectionList">
-      <div repeat.for="item of selectionItems" click.delegate="update('inputValue')" class="selectionItem ${item.hide}">
-        ${item.name}
-      </div>
+  <input type="text" class="form-control" placeholder="${placeholder}" value.bind="inputValue" keyup.delegate="filter('selectionItems', 'inputValue')" />
+  <div class="selectionList">
+    <div repeat.for="item of selectionItems" click.delegate="$parent.update('inputValue', item.name)" class="selectionItem ${item.visibility}">
+      ${item.name}
     </div>
   </div>
 
-  <p>${inputValue2}</p>
+  <script src="/dist/components/typeahead-ui.js"></script>
 </template>
