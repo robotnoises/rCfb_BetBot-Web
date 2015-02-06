@@ -2,17 +2,16 @@ var selectionItem = function (name, value) {
   var si = {};
 
   si.name = name;
-  si.value = value;
-  si.style = 'hidden';
+  si.hide = 'hidden';
 
   return si;
 };
 
 var items = [
-  Object.create(selectionItem("one", "1")),
-  Object.create(selectionItem("two", "2")),
-  Object.create(selectionItem("three", "3")),
-  Object.create(selectionItem("four", "4"))
+  Object.create(selectionItem("one")),
+  Object.create(selectionItem("two")),
+  Object.create(selectionItem("three")),
+  Object.create(selectionItem("four"))
 ];
 
 var typeaheadMatcher = function (items) {
@@ -20,7 +19,9 @@ var typeaheadMatcher = function (items) {
     var substrRegex = new RegExp(q, 'i');
     for (var i = items.length; i--;) {
       if (substrRegex.test(items[i].name)) {
-        items[i].style = 'selectionItem';
+        items[i].hide = '';
+      } else {
+        items[i].hide = 'hidden';
       }
     }
     return items;
@@ -37,13 +38,20 @@ var filter = function (query) {
 
 export class Typeahead {
   constructor() {
-    this.challengerLookupValue = 'on';
+    this.inputValue = '';
+    this.inputValue2 = 'init';
     this.placeholder = "enter username";
     this.selectionItems = items;
   }
 
-  updateTypeahead()
-  {
-    this.selectionItems = filter(this.challengerLookupValue);
-  }
+  update(prop) {
+     // this[prop] = 'test';
+     this.inputValue2 = 'hey';
+  };
+
+  filter(prop) {
+    var str = this.inputValue;
+    if (str.length === 0) return;
+    this[prop] = filter(str);
+  };
 }
