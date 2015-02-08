@@ -5,7 +5,7 @@ var hoverClass = 'hovered';
 var navigationKeyCodes = [38,40]; // up/down arrow keys, might add tab
 var enterKeyCode = [13];
 
-(function () {
+var typeaheadUI = function () {
 
   var hasClass = function (element, className) {
     if (element.classList) {
@@ -73,6 +73,14 @@ var enterKeyCode = [13];
     if (isKey(event, enterKeyCode)) doEnter();
   }
 
-  document.onkeypress = handleKey;
+  window.onkeydown = handleKey;
+};
 
-}());
+export class TypeAheadUI {
+
+  constructor() { }
+
+  load() {
+    return typeaheadUI();
+  }
+}
