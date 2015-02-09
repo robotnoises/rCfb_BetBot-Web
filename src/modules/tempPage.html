@@ -1,12 +1,13 @@
 <template>
   <import from="../components/typeahead"></import>
 
-  <h1 class="text-center">BETTOR'S AGREEMENT</h1>
+  <!-- <h1 class="text-center">BETTOR'S AGREEMENT</h1> -->
+  <h1 class="text-center">LOREM IPSUM</h1>
 
   <section class="form-inline">
     <p>I, <strong>/u/</strong><span class="emphasis">${betData.solicitor}</span>, hereby challenge <strong>/u/</strong><typeahead value.bind="betData.challenger"></typeahead> to the following:</p>
   </section>
-
+  
   <section>
     <textarea class="form-control" rows="8" placeholder="Enter the terms of the bet..." value.bind="betData.terms"></textarea>
   </section>

@@ -1,9 +1,14 @@
 .selectionList {
+
+  background: #fff;
+  position: absolute;
   display: block;
-  width: 200px;
-  padding-left: 10px;
+  min-width: 200px;
+  margin-left: 10px;
 
   transition visibility 100ms;
+  border-radius: 5px;
+
 }
 
 .selectionItem {

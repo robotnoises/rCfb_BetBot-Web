@@ -1,3 +1,5 @@
+var typeaheadClass = 'typeahead';
+var selectionItemGroupClass = 'selectionList';
 var selectionItemClass = 'selectionItem';
 var hideClass = 'hidden';
 var showClass = 'showing';
@@ -6,6 +8,15 @@ var navigationKeyCodes = [38,40]; // up/down arrow keys, might add tab
 var enterKeyCode = [13];
 
 var typeaheadUI = function () {
+
+  var calcTypeaheadPosition = function () {
+    try {
+      var leftEdge = document.getElementsByClassName(typeaheadClass)[0].offsetLeft || 0;
+      document.getElementsByClassName(selectionItemGroupClass)[0].style.left = leftEdge + 'px';
+    } catch (ex) {
+      console.log('there was a problem');
+    }
+  }
 
   var hasClass = function (element, className) {
     if (element.classList) {
@@ -74,6 +85,31 @@ var typeaheadUI = function () {
   }
 
   window.onkeydown = handleKey;
+  window.onresize = calcTypeaheadPosition;
+
+  // This is bad
+
+  var timeouts = [];
+
+  var init = function () {
+    if (typeof timeout != 'undefined') clearTimeout(timeout);
+
+    if (document.readyState === 'complete') {
+      calcTypeaheadPosition();
+
+      // clear timeout ids
+      for (var i = timeouts.length; i--;) {
+        clearTimeout(timeouts[i]);
+      }
+    }
+
+    var toId = setTimeout(function() {
+      timeouts.push(toId);
+      init();
+    }, 500);
+  }
+
+  init();
 };
 
 export class TypeAheadUI {
