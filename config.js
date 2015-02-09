@@ -3,14 +3,18 @@ System.config({
     "*": "*.js",
     "aurelia-skeleton-navigation/*": "lib/*.js",
     "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
+    "npm:*": "jspm_packages/npm/*.js",
+    "RedditBet.Web/*": "lib/*.js"
   }
 });
 
 System.config({
   "map": {
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.2",
+    "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.1",
+    "aurelia-framework": "github:aurelia/framework@0.8.4",
     "aurelia-http-client": "github:aurelia/http-client@0.4.3",
+    "aurelia-router": "github:aurelia/router@0.5.1",
     "bootstrap": "github:twbs/bootstrap@3.3.2",
     "font-awesome": "npm:font-awesome@4.3.0",
     "github:aurelia/binding@0.3.2": {
