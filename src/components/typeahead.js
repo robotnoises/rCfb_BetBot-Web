@@ -1,4 +1,3 @@
-import { Behavior } from 'aurelia-framework';
 import { TempPage } from '../modules/tempPage';
 import { TypeAheadMatcher } from './typeahead-matcher';
 import { TypeAheadUI } from './typeahead-ui';
@@ -11,9 +10,9 @@ export class Typeahead {
     this.inputValue = '';
     this.placeholder = "enter username";
     this.typeahead = typeahead;
-    this.selectionItems = this.typeahead.formatSelectionItems(parent.challengers);
+    this.selectionItems = this.typeahead.formatSelectionItems(parent.betData['potential_challengers']);
 
-    ui.load()
+    ui.load();
   }
 
   update(prop, value) {
