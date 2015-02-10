@@ -10,7 +10,7 @@ export class TypeAheadMatcher {
     var selectionItem = function (name) {
       var si = {};
       si.name = name;
-      si.visibility = 'hidden';
+      si.visibility = hideClass;
       return si;
     };
 
