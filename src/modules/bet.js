@@ -1,13 +1,14 @@
-import { TempPageRepository } from '../repositories/tempPageRepository';
+import { BetRepository } from '../repositories/betRepository';
 import { Redirect } from 'aurelia-router';
 
-export class TempPage {
+export class Bet {
 
-  static inject() { return [TempPageRepository]; }
+  static inject() { return [BetRepository]; }
 
   constructor(repo) {
     this.repo = repo;
     this.betData = {};
+    this.hasChallenger = false; // betData["challenger"].length > 0 || false;
   }
 
   canActivate(params) {

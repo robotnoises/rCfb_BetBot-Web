@@ -1,17 +1,18 @@
-import { TempPage } from '../modules/tempPage';
+import { Bet } from '../modules/bet';
 import { TypeAheadMatcher } from './typeahead-matcher';
 import { TypeAheadUI } from './typeahead-ui';
 
 export class Typeahead {
 
-  static inject() { return [TempPage, TypeAheadMatcher, TypeAheadUI]; }
+  static inject() { return [Bet, TypeAheadMatcher, TypeAheadUI]; }
 
   constructor(parent, typeahead, ui) {
     this.inputValue = '';
-    this.placeholder = "enter username";
+    this.placeholder = "challenger's username";
     this.typeahead = typeahead;
     this.selectionItems = this.typeahead.formatSelectionItems(parent.betData['potential_challengers']);
 
+    // This might be a bad pattern
     ui.load();
   }
 

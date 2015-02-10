@@ -15,7 +15,7 @@ export class App {
       config.map([
         {
           route: ['t/:token'],
-          moduleId: './modules/tempPage',
+          moduleId: './modules/bet',
           title: 'Confirm your bet',
           nav: false
         },

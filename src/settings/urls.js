@@ -1,11 +1,11 @@
 var baseApi = "http://localhost:52857/api/";
 
-var tempPage = {
+var bet = {
   validate: function (token) { return baseApi + 'temppage/validate/' + token },
   betData: function (token) { return baseApi + 'temppage/bet/' + token }
 }
 
-Object.freeze(tempPage);
+Object.freeze(bet);
 
 export class Urls {
 
@@ -13,7 +13,7 @@ export class Urls {
     return baseApi;
   }
 
-  get tempPage() {
-    return tempPage;
+  get bet() {
+    return bet;
   }
 }

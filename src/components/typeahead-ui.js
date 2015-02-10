@@ -14,7 +14,19 @@ var typeaheadUI = function () {
       var leftEdge = document.getElementsByClassName(typeaheadClass)[0].offsetLeft || 0;
       document.getElementsByClassName(selectionItemGroupClass)[0].style.left = leftEdge + 'px';
     } catch (ex) {
-      console.log('there was a problem');
+      // console.log('there was a problem');
+    }
+  }
+
+  var calcTypeaheadInputWidth = function () {
+    try {
+      var input = document.getElementsByClassName(typeaheadClass)[0];
+      var size = input.getAttribute('placeholder').length;
+
+      input.setAttribute('size', size);
+      
+    } catch (ex) {
+      //
     }
   }
 
@@ -84,6 +96,8 @@ var typeaheadUI = function () {
     if (isKey(event, enterKeyCode)) doEnter();
   }
 
+  // Event Handlers
+
   window.onkeydown = handleKey;
   window.onresize = calcTypeaheadPosition;
 
@@ -95,7 +109,9 @@ var typeaheadUI = function () {
     if (typeof timeout != 'undefined') clearTimeout(timeout);
 
     if (document.readyState === 'complete') {
+
       calcTypeaheadPosition();
+      calcTypeaheadInputWidth();
 
       // clear timeout ids
       for (var i = timeouts.length; i--;) {

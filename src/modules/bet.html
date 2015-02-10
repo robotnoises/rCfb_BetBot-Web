@@ -1,0 +1,49 @@
+<template>
+  <import from="../components/typeahead"></import>
+
+  <h1 class="text-center">BETTOR'S AGREEMENT</h1>
+
+  <hr class="fancyashell" />
+
+  <section class="form-inline">
+    <p>THIS AGREEMENT does hereby state that <strong>/u/${betData.solicitor}</strong> ("The Solicitor") and <strong>/u/</strong><typeahead value.two-way"betData.challenger"></typeahead> ("The Challenger") have entered into a contest, to be referred to as "THE BET."</p>
+  </section>
+
+  <section>
+    <p>WHEREAS, The Solicitor (${betData.solicitor}) and The Challenger <span show.bind="hasChallenger">(${betData.challenger})<span> declare themselves to be of sound mind and body, the parties do hereby agree to THE BET in the following terms:</p>
+  </section>
+
+  <section>
+    <textarea class="form-control" rows="8" placeholder="Enter the terms of the bet..." value.bind="betData.terms"></textarea>
+  </section>
+
+  <section>
+    <p>All Conditions for determining a winner and a loser of THE BET, as described in the previous section, will be satisfied on [enter event date].</p>
+  </section>
+
+  <section>
+    <p>The loser of THE BET will have until [enter cutoff date] to fulfill their obligations, which will hopefully be embarrassing.</p>
+  </section>
+
+  <section>
+    <p>LET IT BE KNOWN THAT, all parties (The Solicitor and The Challenger) also agree to absolve the creators and representatives of cfb_betbot and this website from any liability in the event of (but not limited to): injury, dismemberment, death, or any psychological trauma caused by public internet shaming.</p>
+  </section>
+
+  <section>
+    <p>LET IT ALSO BE KNOWN THAT, this is not an actual legal document. Sorry.</p>
+  </section>
+
+  <section>
+    <p>IN WITNESS THEREOF, the involved parties, having familiarized themselves with the existing conditions and terms herein, hereby declare their intentions to fulfill the terms of THE BET to the best of their ability.</p>
+  </section>
+
+  <section>
+    <p>Signed:</p>
+
+    <p>[input here] / THE SOLICITOR</p>
+
+    <p>Signed:</p>
+
+    <p>[input here] / THE CHALLENGER</p>
+  </section>
+</template>
