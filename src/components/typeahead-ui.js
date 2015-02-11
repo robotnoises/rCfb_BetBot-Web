@@ -24,7 +24,7 @@ var typeaheadUI = function () {
       var size = input.getAttribute('placeholder').length;
 
       input.setAttribute('size', size);
-      
+
     } catch (ex) {
       //
     }
@@ -88,7 +88,8 @@ var typeaheadUI = function () {
   }
 
   var doEnter = function () {
-    document.getElementsByClassName(hoverClass)[0].click();
+    var el = document.getElementsByClassName(hoverClass)[0];
+    if (typeof el != 'undefined') el.click()
   }
 
   var handleKey = function (event) {

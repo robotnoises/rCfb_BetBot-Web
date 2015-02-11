@@ -1,9 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/styles/typeahead.css" />
 
 <template>
-  <input type="text" class="form-control typeahead" placeholder="${placeholder}" value.bind="inputValue" keyup.delegate="filter('selectionItems', 'inputValue')" />
+  <input type="text" class="form-control typeahead" placeholder="${placeholder}" value.bind="challenger" keyup.delegate="filter('selectionItems', 'challenger')" />
   <div class="selectionList">
-    <div repeat.for="item of selectionItems" click.delegate="$parent.update('inputValue', item.name)" class="selectionItem ${item.visibility}">
+    <div repeat.for="item of selectionItems" click.delegate="$parent.update('challenger', item.name)" class="selectionItem ${item.visibility}">
       ${item.name}
     </div>
   </div>

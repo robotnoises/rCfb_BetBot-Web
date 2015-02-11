@@ -5,10 +5,10 @@ export class Bet {
 
   static inject() { return [BetRepository]; }
 
-  constructor(repo) {
-    this.repo = repo;
+  constructor(repo, show) {
     this.betData = {};
-    this.hasChallenger = false; // betData["challenger"].length > 0 || false;
+    this.repo = repo;
+    this.hasChallenger;
   }
 
   canActivate(params) {
@@ -20,6 +20,7 @@ export class Bet {
   activate(params) {
     return this.repo.getBetData(params.token).then(data => {
       this.betData = data;
+      this.hasChallenger = data.challenger !== null && data.challenger.length > 0
     });
   }
 }

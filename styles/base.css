@@ -7,7 +7,7 @@ body {
   padding-top: 50px;
 }
 
-h1, h2, h3, h4, h5, p, a, div, section {
+h1, h2, h3, h4, h5, p, a, div, section, input {
   /*font-family: 'Crete Round', serif;*/
   /*font-family: 'Slabo 27px', serif;*/
   /*font-family: 'Montserrat', sans-serif;*/
@@ -36,6 +36,34 @@ textarea {
   resize: none;
 }
 
+
+section {
+  margin-bottom: 36px;
+}
+
+hr.fancyashell {
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+
+hr.fancyashell:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+.hidden, .aurelia-hide {
+  display: none !important;
+}
+
 /* Bootstrap overrides */
 
 .container {
@@ -61,8 +89,5 @@ input.form-control {
   background: inherit;
   padding-left: 5px;
   padding-right: 5px;
-}
-
-section {
-  margin-bottom: 36px;
+  font-size: 1em;
 }
