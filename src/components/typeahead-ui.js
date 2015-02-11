@@ -4,6 +4,7 @@ var selectionItemClass = 'selectionItem';
 var hideClass = 'hidden';
 var showClass = 'showing';
 var hoverClass = 'hovered';
+var hiddenInputContentId = 'hiddenInputContent';
 var navigationKeyCodes = [38,40]; // up/down arrow keys, might add tab
 var enterKeyCode = [13];
 
@@ -21,9 +22,9 @@ var typeaheadUI = function () {
   var calcTypeaheadInputWidth = function () {
     try {
       var input = document.getElementsByClassName(typeaheadClass)[0];
-      var size = input.getAttribute('placeholder').length;
+      var size = document.getElementById(hiddenInputContentId).clientWidth;
 
-      input.setAttribute('size', size);
+      input.setAttribute('style', 'width: ' + size + 'px');
 
     } catch (ex) {
       //

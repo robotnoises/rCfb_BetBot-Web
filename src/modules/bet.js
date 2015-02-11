@@ -8,7 +8,6 @@ export class Bet {
   constructor(repo, show) {
     this.betData = {};
     this.repo = repo;
-    this.hasChallenger;
   }
 
   canActivate(params) {
@@ -22,5 +21,9 @@ export class Bet {
       this.betData = data;
       this.hasChallenger = data.challenger !== null && data.challenger.length > 0
     });
+  }
+
+  hasChallenger() {
+    return this.betData['challenger'].length > 0;
   }
 }

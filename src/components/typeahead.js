@@ -11,7 +11,8 @@ export class Typeahead {
     this.typeahead = typeahead;
     this.selectionItems = this.typeahead.formatSelectionItems(this.parent.betData['potential_challengers']);
     this.challenger = '';
-    this.placeholder = "challenger's username";
+    this.placeholder = 'challenger\'s username';
+    this.hiddenInputContent = this.updateHiddenInputContent();
 
     // This might be a bad pattern
     ui.load();
@@ -29,10 +30,15 @@ export class Typeahead {
     var filterer = this.typeahead.matcher(this.selectionItems);
     this[itemsToFilter] = filterer(filterStr);
 
-    this.syncParentProperties();
+    this.sync();
   };
 
-  syncParentProperties() {
+  updateHiddenInputContent() {
+    return this.hiddenInputContent = this.challenger.length > 0 ? this.challenger : this.placeholder;
+  }
+
+  sync() {
     this.parent.betData.challenger = this.challenger;
+    // this.updateHiddenInputContent();
   }
 }
