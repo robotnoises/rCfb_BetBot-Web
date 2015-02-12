@@ -10,6 +10,9 @@ export class BetRepository {
     this.urls = urls;
     this.keys = keys;
     this.http = http;
+    
+    // Add application/json as the default Content-type
+    this.http.defaultRequestHeaders.headers['Content-Type'] = 'application/json';
   }
 
   validate(token) {
@@ -32,7 +35,6 @@ export class BetRepository {
   submit(data) {
     var url = this.urls.bet.update();
 
-    this.http.defaultRequestHeaders.headers['Content-Type'] = 'application/json';
     console.log(this.http);
     return this.http.put(url, data).then(response => {
       return true;
