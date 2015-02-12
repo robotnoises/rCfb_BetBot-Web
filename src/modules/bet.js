@@ -8,6 +8,7 @@ export class Bet {
   constructor(repo, show) {
     this.betData = {};
     this.repo = repo;
+    this.hasChallenger =  true; // this.betData.challenger !== null && this.betData.challenger.length > 0;
   }
 
   canActivate(params) {
@@ -19,11 +20,15 @@ export class Bet {
   activate(params) {
     return this.repo.getBetData(params.token).then(data => {
       this.betData = data;
-      this.hasChallenger = data.challenger !== null && data.challenger.length > 0
     });
   }
 
-  hasChallenger() {
-    return this.betData['challenger'].length > 0;
+  submit() {
+    // Todo show modal spinner
+    this.repo.submit(this.betData).then(success => {
+      if (success) alert('cool!');
+      else alert('shit.');
+      // Kill Modal, show confirm success
+    });
   }
 }

@@ -87,6 +87,8 @@ hr.fancyashell:before {
   box-shadow: none;
   border: none;
   font-size: 1.1em;
+  padding-left: 2px;
+  padding-right: 2px;
   background-color: #ffe;
 }
 

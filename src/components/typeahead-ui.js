@@ -22,7 +22,7 @@ var typeaheadUI = function () {
   var calcTypeaheadInputWidth = function () {
     try {
       var input = document.getElementsByClassName(typeaheadClass)[0];
-      var size = document.getElementById(hiddenInputContentId).clientWidth;
+      var size = document.getElementById(hiddenInputContentId).clientWidth + 16;
 
       input.setAttribute('style', 'width: ' + size + 'px');
 

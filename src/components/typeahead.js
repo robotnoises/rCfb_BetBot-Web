@@ -22,6 +22,7 @@ export class Typeahead {
     // Todo: Check if props exist
     this[prop] = value;
     this.filter('selectionItems', 'challenger');
+    this.updateHiddenInputContent();
   };
 
   filter(itemsToFilter, filterProp) {
@@ -39,6 +40,5 @@ export class Typeahead {
 
   sync() {
     this.parent.betData.challenger = this.challenger;
-    // this.updateHiddenInputContent();
   }
 }

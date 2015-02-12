@@ -28,4 +28,14 @@ export class BetRepository {
       return response.content; // a Bet object
     });
   }
+
+  submit(data) {
+    var url = this.urls.bet.update();
+
+    this.http.defaultRequestHeaders.headers['Content-Type'] = 'application/json';
+    console.log(this.http);
+    return this.http.put(url, data).then(response => {
+      return true;
+    });
+  }
 }
