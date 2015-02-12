@@ -1,7 +1,7 @@
 System.config({
   "paths": {
     "*": "*.js",
-    "aurelia-skeleton-navigation/*": "lib/*.js",
+    // "aurelia-skeleton-navigation/*": "lib/*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js",
     "RedditBet.Web/*": "lib/*.js"
