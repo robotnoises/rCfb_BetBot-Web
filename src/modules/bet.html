@@ -1,17 +1,21 @@
 <template>
   <import from="../components/typeahead"></import>
 
+  <div>
+    <img id="rcfb-logo" class="block-center" src="//i.imgur.com/9topvds.jpg" />
+  </div>
+
   <h1 class="text-center">BETTOR'S AGREEMENT</h1>
 
   <hr class="fancyashell" />
 
   <form submit.delegate="submit()">
     <section>
-      <p>THIS AGREEMENT does hereby state that <strong>${betData.solicitor}</strong> (The Solicitor) and <typeahead class="inline"></typeahead> (The Challenger) have entered into a contest, to be referred to as "THE BET."</p>
+      <p><span class="biggify">THIS AGREEMENT</span> does hereby state that <strong>${betData.solicitor}</strong> (The Solicitor) and <typeahead class="inline"></typeahead> (The Challenger) have entered into a contest, to be referred to as "THE BET."</p>
     </section>
 
     <section>
-      <p>WHEREAS, The Solicitor (${betData.solicitor}) and The Challenger <span show.bind="hasChallenger">(${betData.challenger})</span> declare themselves to be of sound mind and body, the parties do hereby agree to THE BET in the following terms:</p>
+      <p><span class="biggify">WHEREAS</span>, The Solicitor (${betData.solicitor}) and The Challenger <span show.bind="hasChallenger">(${betData.challenger})</span> declare themselves to be of sound mind and body, the parties do hereby agree to THE BET in the following terms:</p>
     </section>
 
     <section>
@@ -19,23 +23,20 @@
     </section>
 
     <section>
-      <p>All Conditions for determining a winner and a loser of THE BET, as described in the previous section, will be satisfied on [enter event date].</p>
-    </section>
-
-    <section>
+      <p><span class="biggify">ALL CONDITIONS</span> for determining a winner and a loser of THE BET, as described in the previous section, will be satisfied on [enter event date].</p>
       <p>The loser of THE BET will have until [enter cutoff date] to fulfill their obligations, which will hopefully be embarrassing.</p>
     </section>
 
     <section>
-      <p>LET IT BE KNOWN THAT, all parties (The Solicitor and The Challenger) also agree to absolve the creators and representatives of cfb_betbot and this website from any liability in the event of (but not limited to): injury, dismemberment, death, or any psychological trauma caused by public internet shaming.</p>
+      <p><span class="biggify">LET IT BE KNOWN</span> that all parties (The Solicitor and The Challenger) also agree to absolve the creators and representatives of cfb_betbot and this website from any liability in the event of (but not limited to): injury, dismemberment, death, or any psychological trauma caused by public internet shaming.</p>
     </section>
 
     <section>
-      <p>LET IT ALSO BE KNOWN THAT, this is not an actual legal document. Sorry.</p>
+      <p><span class="biggify">LET IT ALSO BE KNOWN</span> that this is not an actual legal document. <span class="biggify">SORRY</span>.</p>
     </section>
 
     <section>
-      <p>IN WITNESS THEREOF, the involved parties, having familiarized themselves with the existing conditions and terms herein, hereby declare their intentions to fulfill the terms of THE BET to the best of their ability.</p>
+      <p><span class="biggify">IN WITNESS THEREOF</span>, the involved parties, having familiarized themselves with the existing conditions and terms herein, hereby declare their intentions to fulfill the terms of THE BET to the best of their ability.</p>
     </section>
 
     <section class="form-inline">
@@ -52,4 +53,14 @@
       <button type="submit" class="btn btn-default">SUBMIT</button>
     </section>
   </form>
+
+  <!-- <section>
+    <h1>HEADING</h1>
+    <h2>HEADING</h2>
+    <h3>HEADING</h3>
+    <h4>HEADING</h4>
+    <h5>HEADING</h5>
+    <h6>HEADING</h6>
+    <p>Here is a paragraph.</p>
+  </section> -->
 </template>

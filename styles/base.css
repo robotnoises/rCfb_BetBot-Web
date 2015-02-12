@@ -4,15 +4,23 @@ html, body {
 }
 
 body {
-  padding-top: 50px;
+  padding: 10px;
 }
 
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2.17em; }
+h4 { font-size: 2.12em; }
+h5 { font-size: 1.83em; }
+h6 { font-size: 1.75em; }
+
 h1, h2, h3, h4, h5, p, a, div, section, input {
-  /*font-family: 'Crete Round', serif;*/
-  /*font-family: 'Slabo 27px', serif;*/
-  /*font-family: 'Montserrat', sans-serif;*/
-  font-family: 'Roboto Slab', serif;
-  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Lora', serif;*/
 }
 
 p {
@@ -32,6 +40,22 @@ p {
   color: #666;
 }
 
+.biggify {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+#rcfb-logo {
+  width: 150px;
+}
+
+.block-center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* */
+
 textarea {
   resize: none;
 }
@@ -40,7 +64,7 @@ section {
   margin-bottom: 36px;
 }
 
-hr.fancyashell {
+/*hr.fancyashell {
   height: 30px;
   border-style: solid;
   border-color: black;
@@ -57,7 +81,7 @@ hr.fancyashell:before {
   border-color: black;
   border-width: 0 0 1px 0;
   border-radius: 20px;
-}
+}*/
 
 .hidden, .aurelia-hide {
   display: none !important;
